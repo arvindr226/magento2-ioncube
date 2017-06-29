@@ -34,7 +34,7 @@ WORKDIR /opt
 RUN curl -O http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
 RUN tar -xvf ioncube*.tar.gz
 RUN cp ioncube/* /usr/lib/php/20131226/
-RUN echo "zend_extension = /usr/lib/php/20131226/ioncube_loader_lin_5.6.so" > /etc/php/5.6/apache2/php.ini 
+RUN echo "zend_extension = /usr/lib/php/20131226/ioncube_loader_lin_5.6.so" >> /etc/php/5.6/apache2/php.ini 
 RUN mkdir /var/run/sshd
 RUN echo 'root:screencast' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
